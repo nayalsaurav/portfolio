@@ -1,11 +1,21 @@
+import OnekoCat from '@/components/common/oneko-cat';
+import { Navbar } from '@/components/navbar';
+import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
+import { ThemeProvider } from 'next-themes';
+import { ViewTransitions } from 'next-view-transitions';
+import { Inter, Roboto } from 'next/font/google';
 
 import './globals.css';
 
 const roboto = Roboto({
   subsets: ['latin'],
   variable: '--font-sans',
+  display: 'swap',
+});
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
   display: 'swap',
 });
 
@@ -53,8 +63,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={roboto.variable} suppressHydrationWarning>
-      <body className={` ${roboto.variable} antialiased`}>{children}</body>
-    </html>
+    <ViewTransitions>
+      <html lang="en" suppressHydrationWarning>
+        <body className={` ${inter.className} antialiased`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar />
+
+            {children}
+            <OnekoCat />
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
