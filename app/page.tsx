@@ -1,3 +1,17 @@
+import { Container } from '@/components/container';
+import { DottedContainer } from '@/components/dotted-container';
+import { Profile } from '@/components/landing/profile';
+import { Separator } from '@/components/ui/separator';
+
 export default function Page() {
-  return <div className="h-[200vh]">hi there</div>;
+  return (
+    <div>
+      <Container>
+        <DottedContainer className="h-50" />
+        <Separator />
+        <Profile />
+        <Separator />
+      </Container>
+    </div>
+  );
 }

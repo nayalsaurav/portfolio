@@ -19,10 +19,10 @@ export const Navbar = () => {
           <Link
             href="/"
             aria-label="Home"
-            className="h-12.5 w-12.5 overflow-hidden rounded-[10%] border border-amber-300"
+            className="h-12.5 w-12.5 overflow-hidden"
           >
             <Image
-              src="/profile-pic.png"
+              src="/pokemon.png"
               alt="Profile picture"
               width={50}
               height={50}
