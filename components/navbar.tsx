@@ -14,18 +14,18 @@ const navLinks = [
 export const Navbar = () => {
   return (
     <nav className="bg-background/60 sticky top-0 z-50 w-full backdrop-blur-md">
-      <Container className="flex justify-between">
+      <Container className="flex justify-between p-1">
         <div className="typography not-typography:max-w-none flex items-baseline gap-6">
           <Link
             href="/"
             aria-label="Home"
-            className="not-typography h-12.5 w-12.5 overflow-hidden"
+            className="not-typography h-12 w-12 overflow-hidden"
           >
             <Image
               src="/pokemon.png"
               alt="Profile picture"
-              width={50}
-              height={50}
+              width={45}
+              height={45}
               priority
               className="h-full w-full object-cover"
             />

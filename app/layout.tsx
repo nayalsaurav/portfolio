@@ -1,6 +1,7 @@
 import OnekoCat from '@/components/common/oneko-cat';
 import { Navbar } from '@/components/navbar';
 import { Separator } from '@/components/ui/separator';
+import { fontMono, fontSans } from '@/lib/font';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { ViewTransitions } from 'next-view-transitions';
@@ -64,8 +65,12 @@ export default function RootLayout({
 }) {
   return (
     <ViewTransitions>
-      <html lang="en" suppressHydrationWarning>
-        <body className={` ${inter.className} antialiased`}>
+      <html
+        lang="en"
+        className={`${fontSans.variable} ${fontMono.variable}`}
+        suppressHydrationWarning
+      >
+        <body>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

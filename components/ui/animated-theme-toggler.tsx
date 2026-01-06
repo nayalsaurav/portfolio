@@ -1,9 +1,11 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { Moon, Sun } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
+
+import { Moon } from '../animate-ui/icons/moon';
+import { Sun } from '../animate-ui/icons/sun';
 
 interface AnimatedThemeTogglerProps extends React.ComponentPropsWithoutRef<'button'> {
   duration?: number;
@@ -76,7 +78,11 @@ export const AnimatedThemeToggler = ({
       className={cn(className)}
       {...props}
     >
-      {isDark ? <Sun /> : <Moon />}
+      {isDark ? (
+        <Sun animateOnHover />
+      ) : (
+        <Moon animateOnHover animate={'balancing'} />
+      )}
       <span className="sr-only">Toggle theme</span>
     </button>
   );

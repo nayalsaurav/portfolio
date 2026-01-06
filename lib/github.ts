@@ -1,3 +1,4 @@
+'use server';
 import type { Activity } from '@/components/kibo-ui/contribution-graph';
 import { GITHUB_USERNAME } from '@/config/profile';
 import { unstable_cache } from 'next/cache';
