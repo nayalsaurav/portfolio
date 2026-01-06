@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Container } from './container';
+import { Separator } from './separator';
 import { AnimatedThemeToggler } from './ui/animated-theme-toggler';
-import { Separator } from './ui/separator';
 
 const navLinks = [
   { name: 'Work', href: '/work' },

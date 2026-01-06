@@ -1,6 +1,6 @@
 import OnekoCat from '@/components/common/oneko-cat';
 import { Navbar } from '@/components/navbar';
-import { Separator } from '@/components/ui/separator';
+import { Separator } from '@/components/separator';
 import { fontMono, fontSans } from '@/lib/font';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
