@@ -1,30 +1,40 @@
-'use client';
-
 import { cn } from '@/lib/utils';
-import * as SeparatorPrimitive from '@radix-ui/react-separator';
-import * as React from 'react';
 
-const Separator = React.forwardRef<
-  React.ElementRef<typeof SeparatorPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
->(
-  (
-    { className, orientation = 'horizontal', decorative = true, ...props },
-    ref,
-  ) => (
-    <SeparatorPrimitive.Root
-      ref={ref}
-      decorative={decorative}
-      orientation={orientation}
-      className={cn(
-        'bg-border shrink-0',
-        orientation === 'horizontal' ? 'h-[1px] w-full' : 'h-full w-[1px]',
-        className,
-      )}
-      {...props}
+type SeparatorProps = {
+  orientation?: 'horizontal' | 'vertical';
+  thickness?: number;
+  dash?: number;
+  gap?: number;
+  className?: string;
+};
+
+export function Separator({
+  orientation = 'horizontal',
+  thickness = 1,
+  dash = 8,
+  gap = 8,
+  className,
+}: SeparatorProps) {
+  const isHorizontal = orientation === 'horizontal';
+
+  return (
+    <div
+      className={cn('shrink-0', isHorizontal ? 'w-full' : 'h-full', className)}
+      style={{
+        borderWidth: thickness,
+        borderStyle: 'solid',
+        borderImage: isHorizontal
+          ? `repeating-linear-gradient(
+              90deg,
+              var(--color-border) 0 ${dash}px,
+              transparent ${dash}px ${dash + gap}px
+            ) 1`
+          : `repeating-linear-gradient(
+              180deg,
+              var(--color-border) 0 ${dash}px,
+              transparent ${dash}px ${dash + gap}px
+            ) 1`,
+      }}
     />
-  ),
-);
-Separator.displayName = SeparatorPrimitive.Root.displayName;
-
-export { Separator };
+  );
+}

@@ -1,4 +1,3 @@
-import { Card } from '@/components/ui/card';
 import {
   IconBrandGithub,
   IconBrandLeetcode,
@@ -11,9 +10,9 @@ import { AlarmClock } from '../animate-ui/icons/alarm-clock';
 import { AnimateIcon } from '../animate-ui/icons/icon';
 import { Send } from '../animate-ui/icons/send';
 import { Button } from '../ui/button';
-import { Separator } from '../ui/separator';
 import { Tooltip } from '../ui/tooltip-card';
 import { WordRotate } from '../ui/word-rotate';
+import { GitHubContributions } from './github';
 import { GithubCard } from './profile-cards/github';
 import { LeetCodeStats } from './profile-cards/leetcode';
 import { LinkedInProfileCard } from './profile-cards/linkedin';
@@ -40,7 +39,7 @@ export const Profile = () => {
             Saurav Nayal
           </h2>
 
-          <div className="text-muted-foreground/50 mt-1 text-base">
+          <div className="text-muted-foreground mt-1 font-mono text-sm text-balance">
             <WordRotate
               words={[
                 'Backend Engineer',
@@ -51,8 +50,6 @@ export const Profile = () => {
           </div>
         </div>
       </div>
-
-      <Separator className="my-4" />
 
       {/* Bio */}
       <div className="text-muted-foreground max-w-2xl space-y-4">
@@ -87,7 +84,7 @@ export const Profile = () => {
 
       {/* Socials */}
       <div className="mt-8 space-y-3">
-        <p className="px-3 text-sm tracking-wide">
+        <p className="text-sm tracking-wide">
           Here are my{' '}
           <span className="text-muted-foreground font-medium">socials</span>
         </p>
@@ -125,6 +122,9 @@ export const Profile = () => {
             LeetCode
           </Tooltip>
         </div>
+      </div>
+      <div>
+        <GitHubContributions />
       </div>
     </section>
   );

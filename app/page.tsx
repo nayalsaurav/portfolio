@@ -8,10 +8,12 @@ export default function Page() {
     <div>
       <Container>
         <DottedContainer className="h-50" />
-        <Separator />
-        <Profile />
-        <Separator />
       </Container>
+      <Separator />
+      <Container>
+        <Profile />
+      </Container>
+      <Separator />
     </div>
   );
 }

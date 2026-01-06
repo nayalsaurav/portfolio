@@ -17,7 +17,7 @@ export function Container({
 }: ContainerProps) {
   return (
     <div
-      className={cn('mx-auto max-w-3xl p-2', className)}
+      className={cn('mx-auto max-w-3xl p-4', className)}
       style={{
         borderLeftWidth: thickness,
         borderRightWidth: thickness,
