@@ -5,6 +5,7 @@ import {
   IconBrandTwitter,
 } from '@tabler/icons-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { AlarmClock } from '../animate-ui/icons/alarm-clock';
 import { AnimateIcon } from '../animate-ui/icons/icon';
@@ -110,13 +111,15 @@ export const Profile = () => {
         </p>
 
         <div className="flex flex-wrap gap-3">
-          <Tooltip
-            content={<GithubCard />}
-            containerClassName="flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-colors hover:bg-muted/50"
-          >
-            <IconBrandGithub className="h-4 w-4" />
-            GitHub
-          </Tooltip>
+          <a href={'https://github.com/nayalsaurav'}>
+            <Tooltip
+              content={<GithubCard />}
+              containerClassName="flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-colors hover:bg-muted/50"
+            >
+              <IconBrandGithub className="h-4 w-4" />
+              GitHub
+            </Tooltip>
+          </a>
 
           <Tooltip
             content={<TooltipCard src="/twitter.png" />}

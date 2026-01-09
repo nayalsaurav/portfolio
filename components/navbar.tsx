@@ -13,8 +13,8 @@ const navLinks = [
 
 export const Navbar = () => {
   return (
-    <nav className="bg-background/60 sticky top-0 z-50 w-full backdrop-blur-md">
-      <Container className="flex justify-between p-1">
+    <nav className="bg-background/60 sticky top-0 z-50 w-full font-mono backdrop-blur-md">
+      <Container className="flex items-baseline justify-between p-1">
         <div className="typography not-typography:max-w-none flex items-baseline gap-6">
           <Link
             href="/"
@@ -37,7 +37,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="after:bg-foreground relative text-base font-medium no-underline after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                className="after:bg-foreground relative text-base no-underline after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 {link.name}
               </Link>

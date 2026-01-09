@@ -1,24 +1,10 @@
 import OnekoCat from '@/components/common/oneko-cat';
 import { Navbar } from '@/components/navbar';
-import { Separator } from '@/components/separator';
-import { fontMono, fontSans } from '@/lib/font';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { ViewTransitions } from 'next-view-transitions';
-import { Inter, Roboto } from 'next/font/google';
 
 import './globals.css';
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  display: 'swap',
-});
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: {
@@ -65,12 +51,13 @@ export default function RootLayout({
 }) {
   return (
     <ViewTransitions>
-      <html
-        lang="en"
-        className={`${fontSans.variable} ${fontMono.variable}`}
-        suppressHydrationWarning
-      >
-        <body>
+      <html lang="en" suppressHydrationWarning>
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="911ed5e1-2cf3-4f50-904f-3ab5d2950fd0"
+        ></script>
+        <body className="font-mono">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -79,7 +66,7 @@ export default function RootLayout({
           >
             <Navbar />
 
-            {children}
+            <main className="font-mono">{children}</main>
             <OnekoCat />
           </ThemeProvider>
         </body>

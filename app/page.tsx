@@ -5,7 +5,7 @@ import { Separator } from '@/components/separator';
 
 export default function Page() {
   return (
-    <div>
+    <>
       <Container>
         <DottedContainer className="h-50" />
       </Container>
@@ -14,6 +14,6 @@ export default function Page() {
         <Profile />
       </Container>
       <Separator />
-    </div>
+    </>
   );
 }
