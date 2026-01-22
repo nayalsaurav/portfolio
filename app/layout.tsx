@@ -1,5 +1,8 @@
 import OnekoCat from '@/components/common/oneko-cat';
+import { Container } from '@/components/container';
 import { Navbar } from '@/components/navbar';
+import { Footer } from '@/components/quote-footer';
+import { VideoHeader } from '@/components/video-header';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { ViewTransitions } from 'next-view-transitions';
@@ -66,7 +69,14 @@ export default function RootLayout({
           >
             <Navbar />
 
+            <Container>
+              <VideoHeader />
+            </Container>
+
             <main className="font-mono">{children}</main>
+            <Container>
+              <Footer />
+            </Container>
             <OnekoCat />
           </ThemeProvider>
         </body>

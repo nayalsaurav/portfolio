@@ -1,7 +1,54 @@
-import React from 'react';
+import { BackButton } from '@/components/back-button';
+import { Container } from '@/components/container';
+import { StripeMask } from '@/components/stripe-mask';
+import { WorkExperience } from '@/components/work-experience';
+import { experiences } from '@/config/experiences';
+import { BriefcaseIcon } from 'lucide-react';
+import { Metadata } from 'next';
 
-const WorkPage = () => {
-  return <div>WorkPage</div>;
+export const metadata: Metadata = {
+  title: 'Work Experience',
+  description:
+    'My professional journey, internships, and work experience as a Software Developer.',
+  openGraph: {
+    title: 'Work Experience | Saurav Nayal',
+    description:
+      'My professional journey, internships, and work experience as a Software Developer.',
+  },
+  twitter: {
+    title: 'Work Experience | Saurav Nayal',
+    description:
+      'My professional journey, internships, and work experience as a Software Developer.',
+  },
 };
 
-export default WorkPage;
+export default function WorkPage() {
+  return (
+    <>
+      <StripeMask angle={45} />
+      <Container>
+        <section className="py-4">
+          {/* Back Button */}
+          <div className="mb-6">
+            <BackButton />
+          </div>
+
+          {/* Section Header */}
+          <div className="mb-6">
+            <h1 className="text-3xl font-bold tracking-tight">
+              Work Experience
+            </h1>
+            <p className="text-muted-foreground mt-2">
+              My professional journey building software solutions and
+              contributing to impactful projects.
+            </p>
+          </div>
+
+          {/* Work Experience Timeline */}
+          <WorkExperience experiences={experiences} />
+        </section>
+      </Container>
+      <StripeMask angle={-45} />
+    </>
+  );
+}

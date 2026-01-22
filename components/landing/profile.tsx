@@ -1,13 +1,15 @@
+import { profile } from '@/config/profile';
 import {
   IconBrandGithub,
   IconBrandLeetcode,
   IconBrandLinkedin,
   IconBrandTwitter,
 } from '@tabler/icons-react';
+import { FileText } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { AlarmClock } from '../animate-ui/icons/alarm-clock';
+import { ClipboardList } from '../animate-ui/icons/clipboard-list';
 import { AnimateIcon } from '../animate-ui/icons/icon';
 import { Send } from '../animate-ui/icons/send';
 import { Button } from '../ui/button';
@@ -17,6 +19,7 @@ import { GitHubContributions } from './github';
 import { GithubCard } from './profile-cards/github';
 import { LeetCodeStats } from './profile-cards/leetcode';
 import { LinkedInProfileCard } from './profile-cards/linkedin';
+import TechStack from './tech-stack';
 
 export const Profile = () => {
   return (
@@ -53,7 +56,7 @@ export const Profile = () => {
           <div>
             <div className="flex items-center gap-2 pl-4">
               <h1 className="-translate-y-px text-3xl font-semibold tracking-tight">
-                Saurav Nayal
+                {profile.name}
               </h1>
             </div>
 
@@ -61,11 +64,7 @@ export const Profile = () => {
             <div className="h-12.5 py-1 pl-4 sm:h-9">
               <WordRotate
                 className="text-muted-foreground font-mono text-sm text-balance"
-                words={[
-                  'Backend Engineer',
-                  'Node.js Developer',
-                  'API & System Design',
-                ]}
+                words={profile.taglines}
               />
             </div>
           </div>
@@ -74,30 +73,29 @@ export const Profile = () => {
 
       {/* Bio */}
       <div className="text-muted-foreground mt-6 space-y-4">
-        <p className="leading-relaxed">
-          Hi, I’m Saurav — a Node.js Backend Developer building scalable
-          solutions. I design and build reliable backend systems using
-          <span className="text-foreground font-medium">
-            {' '}
-            TypeScript, React, Next.js, Bun, and PostgreSQL
-          </span>
-          , with a strong focus on API design, performance, and clean
-          architecture.
-        </p>
+        <TechStack />
 
         {/* CTAs */}
         <div className="flex flex-wrap gap-3">
           <AnimateIcon animateOnHover>
-            <Button size="sm" className="gap-2">
-              <AlarmClock className="h-4 w-4" />
-              Book an intro call
+            <Button size="sm" className="gap-2" asChild>
+              <Link
+                href={process.env.NEXT_PUBLIC_RESUME_URL || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ClipboardList />
+                Resume
+              </Link>
             </Button>
           </AnimateIcon>
 
           <AnimateIcon animateOnHover>
-            <Button size="sm" variant="secondary" className="gap-2">
-              <Send className="h-4 w-4" />
-              Send email
+            <Button size="sm" variant="secondary" className="gap-2" asChild>
+              <Link href={`mailto:${profile.contact.email}`}>
+                <Send className="h-4 w-4" />
+                Send email
+              </Link>
             </Button>
           </AnimateIcon>
         </div>
@@ -111,39 +109,45 @@ export const Profile = () => {
         </p>
 
         <div className="flex flex-wrap gap-3">
-          <a href={'https://github.com/nayalsaurav'}>
+          <Link href={profile.contact.github} target="_blank">
             <Tooltip
               content={<GithubCard />}
-              containerClassName="flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-colors hover:bg-muted/50"
+              containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
             >
               <IconBrandGithub className="h-4 w-4" />
               GitHub
             </Tooltip>
-          </a>
+          </Link>
 
-          <Tooltip
-            content={<TooltipCard src="/twitter.png" />}
-            containerClassName="flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-colors hover:bg-muted/50"
-          >
-            <IconBrandTwitter className="h-4 w-4" />
-            Twitter
-          </Tooltip>
+          <Link href={profile.contact.twitter} target="_blank">
+            <Tooltip
+              content={<TooltipCard src="/twitter.png" />}
+              containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+            >
+              <IconBrandTwitter className="h-4 w-4" />
+              Twitter
+            </Tooltip>
+          </Link>
 
-          <Tooltip
-            content={<LinkedInProfileCard />}
-            containerClassName="flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-colors hover:bg-muted/50"
-          >
-            <IconBrandLinkedin className="h-4 w-4" />
-            LinkedIn
-          </Tooltip>
+          <Link href={profile.contact.linkedin} target="_blank">
+            <Tooltip
+              content={<LinkedInProfileCard />}
+              containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+            >
+              <IconBrandLinkedin className="h-4 w-4" />
+              LinkedIn
+            </Tooltip>
+          </Link>
 
-          <Tooltip
-            content={<LeetCodeStats />}
-            containerClassName="flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-colors hover:bg-muted/50"
-          >
-            <IconBrandLeetcode className="h-4 w-4" />
-            LeetCode
-          </Tooltip>
+          <Link href={profile.contact.leetcode} target="_blank">
+            <Tooltip
+              content={<LeetCodeStats />}
+              containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+            >
+              <IconBrandLeetcode className="h-4 w-4" />
+              LeetCode
+            </Tooltip>
+          </Link>
         </div>
       </div>
 
