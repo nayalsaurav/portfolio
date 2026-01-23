@@ -58,7 +58,7 @@ export default function AboutPage() {
             <div className="shrink-0">
               <div className="ring-border ring-offset-background size-28 overflow-hidden rounded-xl ring-1 ring-offset-2">
                 <Image
-                  src="/profile.png"
+                  src="/profile-anime.jpg"
                   alt={profile.name}
                   width={112}
                   height={112}

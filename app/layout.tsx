@@ -1,11 +1,13 @@
 import OnekoCat from '@/components/common/oneko-cat';
 import { Container } from '@/components/container';
+import { FadeIn } from '@/components/fade-in';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/quote-footer';
 import { VideoHeader } from '@/components/video-header';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { ViewTransitions } from 'next-view-transitions';
+import Script from 'next/script';
 
 import './globals.css';
 
@@ -33,6 +35,14 @@ export const metadata: Metadata = {
     siteName: 'Saurav Nayal Portfolio',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Saurav Nayal Portfolio',
+      },
+    ],
   },
 
   twitter: {
@@ -40,6 +50,7 @@ export const metadata: Metadata = {
     title: 'Saurav Nayal | Portfolio',
     description:
       'Software Developer building fast, scalable, and beautiful web experiences.',
+    images: ['/og-image.png'],
   },
 
   icons: {
@@ -55,11 +66,11 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
-        <script
+        <Script
           defer
           src="https://cloud.umami.is/script.js"
           data-website-id="911ed5e1-2cf3-4f50-904f-3ab5d2950fd0"
-        ></script>
+        />
         <body className="font-mono">
           <ThemeProvider
             attribute="class"
@@ -73,10 +84,12 @@ export default function RootLayout({
               <VideoHeader />
             </Container>
 
-            <main className="font-mono">{children}</main>
-            <Container>
-              <Footer />
-            </Container>
+            <FadeIn>
+              <main className="font-mono">{children}</main>
+              <Container>
+                <Footer />
+              </Container>
+            </FadeIn>
             <OnekoCat />
           </ThemeProvider>
         </body>

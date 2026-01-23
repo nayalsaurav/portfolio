@@ -1,3 +1,4 @@
+import { BackButton } from '@/components/back-button';
 import { Container } from '@/components/container';
 import { Projects } from '@/components/projects';
 import { StripeMask } from '@/components/stripe-mask';
@@ -26,6 +27,11 @@ export default function ProjectsPage() {
       <StripeMask angle={45} />
       <Container>
         <section className="py-4">
+          {/* Back Button */}
+          <div className="mb-6">
+            <BackButton />
+          </div>
+
           <div className="mb-6">
             <h1 className="text-3xl font-bold tracking-tight">All Projects</h1>
             <p className="text-muted-foreground mt-2">

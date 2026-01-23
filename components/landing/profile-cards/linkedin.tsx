@@ -19,7 +19,7 @@ export function LinkedInProfileCard() {
         <div className="-mt-12 flex items-end gap-4">
           <div className="border-background relative h-24 w-24 overflow-hidden rounded-full border-4">
             <Image
-              src="/profile.png"
+              src="/profile-anime.jpg"
               alt="Saurav Nayal"
               fill
               className="object-cover"

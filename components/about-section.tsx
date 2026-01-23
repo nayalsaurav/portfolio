@@ -17,7 +17,7 @@ export function AboutSection() {
         {/* Profile Image */}
         <div className="shrink-0">
           <Image
-            src="/profile.png"
+            src="/profile-anime.jpg"
             alt={profile.name}
             width={240}
             height={240}

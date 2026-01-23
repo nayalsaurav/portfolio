@@ -30,7 +30,7 @@ export const Profile = () => {
           <div className="mx-0.5 my-0.75">
             <div className="ring-border ring-offset-background relative size-25 overflow-hidden rounded-xl ring-1 ring-offset-2 sm:size-30">
               <Image
-                src="/profile.png"
+                src="/profile-anime.gif"
                 alt="Saurav Nayal profile picture"
                 fill
                 priority
