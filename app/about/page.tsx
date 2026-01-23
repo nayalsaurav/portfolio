@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://www.nayalsaurav.in/og-image.png',
         width: 1200,
         height: 630,
         alt: 'About Me | Saurav Nayal',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description:
       'Learn more about Saurav Nayal, my skills, education, and achievements as a Software Developer.',
     card: 'summary_large_image',
-    images: ['/og-image.png'],
+    images: ['https://www.nayalsaurav.in/og-image.png'],
   },
 };
 
