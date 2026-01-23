@@ -4,6 +4,12 @@ import { FadeIn } from '@/components/fade-in';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/quote-footer';
 import { VideoHeader } from '@/components/video-header';
+import {
+  getPersonSchema,
+  getPortfolioPageSchema,
+  getProjectsSchema,
+  getWebsiteSchema,
+} from '@/config/schema';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { ViewTransitions } from 'next-view-transitions';
@@ -16,6 +22,7 @@ export const metadata: Metadata = {
     default: 'Saurav Nayal | Portfolio',
     template: '%s | Saurav Nayal',
   },
+  metadataBase: new URL('https://www.nayalsaurav.in'),
   description:
     'Portfolio of Saurav Nayal — Software Developer building fast, scalable, and modern web applications.',
   keywords: [
@@ -35,6 +42,7 @@ export const metadata: Metadata = {
     siteName: 'Saurav Nayal Portfolio',
     locale: 'en_US',
     type: 'website',
+    url: 'https://www.nayalsaurav.in',
     images: [
       {
         url: '/og-image.png',
@@ -53,6 +61,10 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
 
+  other: {
+    'og:logo': 'https://www.nayalsaurav.in/profile-anime.jpg',
+  },
+
   icons: {
     icon: '/favicon.ico',
   },
@@ -66,6 +78,37 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
+        <Script
+          id="person-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getPersonSchema()),
+          }}
+        />
+
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getWebsiteSchema()),
+          }}
+        />
+
+        <Script
+          id="portfolio-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getPortfolioPageSchema()),
+          }}
+        />
+
+        <Script
+          id="projects-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getProjectsSchema()),
+          }}
+        />
         <Script
           defer
           src="https://cloud.umami.is/script.js"

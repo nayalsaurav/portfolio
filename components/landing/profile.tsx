@@ -34,6 +34,7 @@ export const Profile = () => {
                 alt="Saurav Nayal profile picture"
                 fill
                 priority
+                sizes="(max-width: 640px) 100px, 120px"
                 className="object-cover select-none"
               />
             </div>
@@ -109,7 +110,11 @@ export const Profile = () => {
         </p>
 
         <div className="flex flex-wrap gap-3">
-          <Link href={profile.contact.github} target="_blank">
+          <Link
+            href={profile.contact.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Tooltip
               content={<GithubCard />}
               containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
@@ -119,7 +124,11 @@ export const Profile = () => {
             </Tooltip>
           </Link>
 
-          <Link href={profile.contact.twitter} target="_blank">
+          <Link
+            href={profile.contact.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Tooltip
               content={<TooltipCard src="/twitter.png" />}
               containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
@@ -129,7 +138,11 @@ export const Profile = () => {
             </Tooltip>
           </Link>
 
-          <Link href={profile.contact.linkedin} target="_blank">
+          <Link
+            href={profile.contact.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Tooltip
               content={<LinkedInProfileCard />}
               containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
@@ -139,7 +152,11 @@ export const Profile = () => {
             </Tooltip>
           </Link>
 
-          <Link href={profile.contact.leetcode} target="_blank">
+          <Link
+            href={profile.contact.leetcode}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Tooltip
               content={<LeetCodeStats />}
               containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"

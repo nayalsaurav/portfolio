@@ -14,11 +14,25 @@ export const metadata: Metadata = {
     title: 'Work Experience | Saurav Nayal',
     description:
       'My professional journey, internships, and work experience as a Software Developer.',
+    url: 'https://www.nayalsaurav.in/work',
+    siteName: 'Saurav Nayal Portfolio',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Work Experience | Saurav Nayal',
+      },
+    ],
   },
   twitter: {
     title: 'Work Experience | Saurav Nayal',
     description:
       'My professional journey, internships, and work experience as a Software Developer.',
+    card: 'summary_large_image',
+    images: ['/og-image.png'],
   },
 };
 

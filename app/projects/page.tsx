@@ -13,11 +13,25 @@ export const metadata: Metadata = {
     title: 'Projects | Saurav Nayal',
     description:
       'Showcase of my projects, open-source contributions, and experimental apps.',
+    url: 'https://www.nayalsaurav.in/projects',
+    siteName: 'Saurav Nayal Portfolio',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Projects | Saurav Nayal',
+      },
+    ],
   },
   twitter: {
     title: 'Projects | Saurav Nayal',
     description:
       'Showcase of my projects, open-source contributions, and experimental apps.',
+    card: 'summary_large_image',
+    images: ['/og-image.png'],
   },
 };
 

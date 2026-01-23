@@ -30,11 +30,25 @@ export const metadata: Metadata = {
     title: 'About Me | Saurav Nayal',
     description:
       'Learn more about Saurav Nayal, my skills, education, and achievements as a Software Developer.',
+    url: 'https://www.nayalsaurav.in/about',
+    siteName: 'Saurav Nayal Portfolio',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'About Me | Saurav Nayal',
+      },
+    ],
   },
   twitter: {
     title: 'About Me | Saurav Nayal',
     description:
       'Learn more about Saurav Nayal, my skills, education, and achievements as a Software Developer.',
+    card: 'summary_large_image',
+    images: ['/og-image.png'],
   },
 };
 
