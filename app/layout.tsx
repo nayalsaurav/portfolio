@@ -64,10 +64,6 @@ export const metadata: Metadata = {
   other: {
     'og:logo': 'https://www.nayalsaurav.in/profile-anime.jpg',
   },
-
-  icons: {
-    icon: '/favicon.ico',
-  },
 };
 
 export default function RootLayout({
@@ -117,7 +113,7 @@ export default function RootLayout({
         <body className="font-mono">
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >

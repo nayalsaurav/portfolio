@@ -5,7 +5,6 @@ import {
   IconBrandLinkedin,
   IconBrandTwitter,
 } from '@tabler/icons-react';
-import { FileText } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -13,12 +12,9 @@ import { ClipboardList } from '../animate-ui/icons/clipboard-list';
 import { AnimateIcon } from '../animate-ui/icons/icon';
 import { Send } from '../animate-ui/icons/send';
 import { Button } from '../ui/button';
-import { Tooltip } from '../ui/tooltip-card';
+import { LinkPreview } from '../ui/link-preview';
 import { WordRotate } from '../ui/word-rotate';
 import { GitHubContributions } from './github';
-import { GithubCard } from './profile-cards/github';
-import { LeetCodeStats } from './profile-cards/leetcode';
-import { LinkedInProfileCard } from './profile-cards/linkedin';
 import TechStack from './tech-stack';
 
 export const Profile = () => {
@@ -110,61 +106,41 @@ export const Profile = () => {
         </p>
 
         <div className="flex flex-wrap gap-3">
-          <Link
-            href={profile.contact.github}
-            target="_blank"
-            rel="noopener noreferrer"
+          <LinkPreview
+            url={profile.contact.github}
+            className="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)]"
           >
-            <Tooltip
-              content={<GithubCard />}
-              containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
-            >
-              <IconBrandGithub className="h-4 w-4" />
-              GitHub
-            </Tooltip>
-          </Link>
+            <IconBrandGithub className="h-4 w-4" />
+            GitHub
+          </LinkPreview>
 
-          <Link
-            href={profile.contact.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
+          <LinkPreview
+            url={profile.contact.twitter}
+            isStatic
+            imageSrc="/twitter.png"
+            className="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)]"
           >
-            <Tooltip
-              content={<TooltipCard src="/twitter.png" />}
-              containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
-            >
-              <IconBrandTwitter className="h-4 w-4" />
-              Twitter
-            </Tooltip>
-          </Link>
+            <IconBrandTwitter className="h-4 w-4" />
+            Twitter
+          </LinkPreview>
 
-          <Link
-            href={profile.contact.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
+          <LinkPreview
+            url={profile.contact.linkedin}
+            isStatic
+            imageSrc="/linkedin.png"
+            className="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)]"
           >
-            <Tooltip
-              content={<LinkedInProfileCard />}
-              containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
-            >
-              <IconBrandLinkedin className="h-4 w-4" />
-              LinkedIn
-            </Tooltip>
-          </Link>
+            <IconBrandLinkedin className="h-4 w-4" />
+            LinkedIn
+          </LinkPreview>
 
-          <Link
-            href={profile.contact.leetcode}
-            target="_blank"
-            rel="noopener noreferrer"
+          <LinkPreview
+            url={profile.contact.leetcode}
+            className="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)]"
           >
-            <Tooltip
-              content={<LeetCodeStats />}
-              containerClassName="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-[0px_4px_8px_-2px_rgba(0,0,0,0.15),0px_2px_0px_0px_rgba(25,28,33,0.04),0px_0px_0px_1px_rgba(25,28,33,0.12)] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
-            >
-              <IconBrandLeetcode className="h-4 w-4" />
-              LeetCode
-            </Tooltip>
-          </Link>
+            <IconBrandLeetcode className="h-4 w-4" />
+            LeetCode
+          </LinkPreview>
         </div>
       </div>
 
@@ -173,19 +149,5 @@ export const Profile = () => {
         <GitHubContributions />
       </div>
     </section>
-  );
-};
-
-const TooltipCard = ({ src }: { src: string }) => {
-  return (
-    <div>
-      <Image
-        src={src}
-        alt="Tyler Durden"
-        className="aspect-square w-full rounded-sm"
-        width={150}
-        height={150}
-      />
-    </div>
   );
 };
