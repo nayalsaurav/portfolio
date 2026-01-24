@@ -29,10 +29,10 @@ export const Navbar = () => {
             <Link
               href="/"
               aria-label="Home"
-              className="not-typography h-12 w-12 overflow-hidden"
+              className="not-typography h-12 w-12 overflow-hidden rounded-full"
             >
               <Image
-                src="/pokemon.png"
+                src="/profile-anime-2.webp"
                 alt="Profile picture"
                 width={45}
                 height={45}
