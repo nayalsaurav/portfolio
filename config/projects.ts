@@ -22,45 +22,55 @@ export type ProjectItemType = {
 
 export const projects: ProjectItemType[] = [
   {
-    id: 'deployit',
-    title: 'DeployIt',
-    href: '#',
-    dates: '2025',
+    id: 'kairox',
+    title: 'Kairox Analytics',
+    href: 'https://kairox.nayalsaurav.in/',
+    dates: '2026',
     active: true,
     description:
-      'Built a platform to deploy static web apps from GitHub using Cloudflare R2 and Redis. Includes build pipeline, code storage, and global serving.',
+      'Privacy-first, open-source web analytics. Lightweight (<1kb) and cookie-free alternative to Google Analytics. GDPR, CCPA, and PECR compliant.',
     overview:
-      'DeployIt is a modern deployment platform that simplifies the process of deploying static web applications. Connect your GitHub repository, and DeployIt handles the rest - from building your app to serving it globally.',
+      'Kairox is a lightweight, privacy-first web analytics platform that tracks essential metrics without compromising user privacy. It features a beautiful analytics dashboard, device analytics, and global insights, all while remaining fully open-source and self-hostable.',
     features: [
-      'One-click deployment from GitHub repositories',
-      'Automatic build pipeline with support for popular frameworks',
-      'Global CDN distribution via Cloudflare R2',
-      'Real-time build logs and deployment status',
-      'Custom domain support with automatic SSL',
+      'Lightweight (<1kb) tracking script with zero performance impact',
+      'Privacy-focused: No IP storage, cookies, or fingerprinting',
+      'Analytics dashboard with beautiful visualizations',
+      'Global insights with privacy-preserving country/region breakdown',
+      'Device analytics (OS, Browser, Device type)',
+      'Fully supported Dark Mode',
+      'Open Source and self-hostable',
     ],
     techDetails: [
-      'Frontend: Next.js with TypeScript for a modern, type-safe UI',
-      'Queue System: Redis for managing build jobs and caching',
-      'Storage: Cloudflare R2 for storing built assets',
-      'Build Pipeline: Custom Node.js workers for processing builds',
+      'Frontend: Next.js 15 (App Router) with TypeScript',
+      'Database: PostgreSQL via Neon with Prisma ORM',
+      'Authentication: Better Auth with Google OAuth',
+      'Styling: TailwindCSS & Shadcn UI',
+      'Visualization: Recharts for analytics data',
+      'Validation: Zod for data integrity',
     ],
     technologies: [
-      'Next.js',
-      'Node.js',
-      'Redis',
-      'Cloudflare R2',
+      'Next.js 15',
+      'TypeScript',
+      'PostgreSQL',
+      'Prisma',
+      'Better Auth',
       'Tailwind CSS',
+      'Shadcn UI',
     ],
     links: [
       {
+        type: 'Website',
+        href: 'https://kairox.nayalsaurav.in/',
+        icon: 'globe',
+      },
+      {
         type: 'Source',
-        href: 'https://github.com/nayalsaurav/deployit',
+        href: 'https://github.com/nayalsaurav/kairox',
         icon: 'github',
       },
     ],
-    image: '',
-    video:
-      'https://res.cloudinary.com/dcoqmeswp/video/upload/v1752588900/u6uvn2sjxmxsxtkdkmt4.mp4',
+    image: 'https://kairox.nayalsaurav.in/og-image.png',
+    video: '',
   },
   {
     id: 'ghostgram',
@@ -155,6 +165,47 @@ export const projects: ProjectItemType[] = [
     image: '',
     video:
       'https://res.cloudinary.com/dcoqmeswp/video/upload/v1752588903/c6zzcwmtd9za4grmo2zw.mp4',
+  },
+  {
+    id: 'deployit',
+    title: 'DeployIt',
+    href: '#',
+    dates: '2025',
+    active: true,
+    description:
+      'Built a platform to deploy static web apps from GitHub using Cloudflare R2 and Redis. Includes build pipeline, code storage, and global serving.',
+    overview:
+      'DeployIt is a modern deployment platform that simplifies the process of deploying static web applications. Connect your GitHub repository, and DeployIt handles the rest - from building your app to serving it globally.',
+    features: [
+      'One-click deployment from GitHub repositories',
+      'Automatic build pipeline with support for popular frameworks',
+      'Global CDN distribution via Cloudflare R2',
+      'Real-time build logs and deployment status',
+      'Custom domain support with automatic SSL',
+    ],
+    techDetails: [
+      'Frontend: Next.js with TypeScript for a modern, type-safe UI',
+      'Queue System: Redis for managing build jobs and caching',
+      'Storage: Cloudflare R2 for storing built assets',
+      'Build Pipeline: Custom Node.js workers for processing builds',
+    ],
+    technologies: [
+      'Next.js',
+      'Node.js',
+      'Redis',
+      'Cloudflare R2',
+      'Tailwind CSS',
+    ],
+    links: [
+      {
+        type: 'Source',
+        href: 'https://github.com/nayalsaurav/deployit',
+        icon: 'github',
+      },
+    ],
+    image: '',
+    video:
+      'https://res.cloudinary.com/dcoqmeswp/video/upload/v1752588900/u6uvn2sjxmxsxtkdkmt4.mp4',
   },
   {
     id: 'resumecheckkaro',
