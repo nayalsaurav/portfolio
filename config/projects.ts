@@ -75,7 +75,7 @@ export const projects: ProjectItemType[] = [
   {
     id: 'ghostgram',
     title: 'GhostGram',
-    href: 'https://ghostgram.nayalsaurav.tech',
+    href: 'https://ghostgram.nayalsaurav.in',
     dates: '2025',
     active: true,
     description:
@@ -105,7 +105,7 @@ export const projects: ProjectItemType[] = [
     links: [
       {
         type: 'Website',
-        href: 'https://ghostgram.nayalsaurav.tech',
+        href: 'https://ghostgram.nayalsaurav.in',
         icon: 'globe',
       },
       {
@@ -121,7 +121,7 @@ export const projects: ProjectItemType[] = [
   {
     id: 'akari-art',
     title: 'Akari Art',
-    href: 'https://akariart.nayalsaurav.tech',
+    href: 'https://akariart.nayalsaurav.in',
     dates: '2025',
     active: true,
     description:
@@ -153,7 +153,7 @@ export const projects: ProjectItemType[] = [
     links: [
       {
         type: 'Website',
-        href: 'https://akariart.nayalsaurav.tech',
+        href: 'https://akariart.nayalsaurav.in',
         icon: 'globe',
       },
       {
@@ -210,7 +210,7 @@ export const projects: ProjectItemType[] = [
   {
     id: 'resumecheckkaro',
     title: 'ResumeCheckKaro',
-    href: 'https://resumecheckkaro.nayalsaurav.tech',
+    href: 'https://resumecheckkaro.nayalsaurav.in',
     dates: '2025',
     active: true,
     description:
@@ -234,7 +234,7 @@ export const projects: ProjectItemType[] = [
     links: [
       {
         type: 'Website',
-        href: 'https://resumecheckkaro.nayalsaurav.tech',
+        href: 'https://resumecheckkaro.nayalsaurav.in',
         icon: 'globe',
       },
       {
