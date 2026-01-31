@@ -44,6 +44,22 @@ export function getPortfolioPageSchema() {
     '@id': `${SITE_URL}/#portfolio`,
     url: SITE_URL,
     name: `${profile.name} – Software Developer Portfolio`,
+    dateCreated: '2024-01-01',
+    dateModified: new Date().toISOString().split('T')[0],
+    mainEntity: {
+      '@type': 'Person',
+      '@id': `${SITE_URL}/#person`,
+      name: profile.name,
+      url: SITE_URL,
+      jobTitle: profile.title,
+      description: profile.bio,
+      sameAs: [
+        profile.contact.github,
+        profile.contact.linkedin,
+        profile.contact.twitter,
+        profile.contact.leetcode,
+      ],
+    },
     about: {
       '@type': 'Person',
       '@id': `${SITE_URL}/#person`,

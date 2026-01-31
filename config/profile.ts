@@ -9,7 +9,7 @@ export const profile = {
   contact: {
     email: 'nayalsaurav@gmail.com',
     phone: '+91-7678306331',
-    website: 'https://nayalsaurav.tech/',
+    website: 'https://nayalsaurav.in/',
     linkedin: 'https://www.linkedin.com/in/nayalsaurav/',
     github: 'https://github.com/nayalsaurav',
     leetcode: 'https://leetcode.com/nayalsaurav',
@@ -103,7 +103,7 @@ export const profile = {
         'Enhanced client-side rendering and dynamic content updates to improve interactivity and maintain seamless navigation.',
       ],
       github: 'https://github.com/nayalsaurav/GhostGram',
-      live: 'https://ghostgram.nayalsaurav.tech/',
+      live: 'https://ghostgram.nayalsaurav.in/',
     },
     {
       id: 'ai360',
@@ -128,7 +128,7 @@ export const profile = {
         'Optimized image delivery through ImageKit and enhanced front-end responsiveness with Next.js and Tailwind CSS, improving load performance by 45%.',
       ],
       github: 'https://github.com/nayalsaurav/ai360',
-      live: 'https://ai360.nayalsaurav.tech/',
+      live: 'https://ai360.nayalsaurav.in/',
     },
   ],
 

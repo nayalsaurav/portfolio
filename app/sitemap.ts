@@ -2,6 +2,8 @@ import { profile } from '@/config/profile';
 import { projects } from '@/config/projects';
 import { MetadataRoute } from 'next';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = profile.contact.website.endsWith('/')
     ? profile.contact.website.slice(0, -1)
